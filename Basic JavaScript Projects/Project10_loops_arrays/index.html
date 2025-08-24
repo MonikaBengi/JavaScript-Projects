@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project 10 — Loops & Arrays</title>
+  <!-- Load JS (defer ensures it runs after HTML is parsed) -->
+  <script src="JS/main.js" defer></script>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; line-height: 1.5; padding: 16px; }
+    h2 { margin-top: 1.25rem; }
+    button { margin: .25rem .5rem .75rem 0; }
+    .card { padding: .75rem 1rem; background:#f7f7f7; border-radius: 8px; margin-bottom: 1rem; }
+    .out { padding:.5rem .75rem; background:#fff; border:1px solid #e6e6e6; border-radius:6px; min-height: 1.5rem; }
+  </style>
+</head>
+<body>
+  <h1>Project 10 — Loops & Arrays (plus extras)</h1>
+
+  <!-- While loop -->
+  <div class="card">
+    <h2>While Loop</h2>
+    <button onclick="while_Loop()">Run While Loop</button>
+    <div id="WhileLoop" class="out"></div>
+  </div>
+
+  <!-- For loop -->
+  <div class="card">
+    <h2>For Loop</h2>
+    <button onclick="for_Loop()">Run For Loop</button>
+    <div id="ForLoop" class="out"></div>
+  </div>
+
+  <!-- Array -->
+  <div class="card">
+    <h2>Array Example</h2>
+    <button onclick="array_Function()">Show Array Element</button>
+    <div id="Array" class="out"></div>
+  </div>
+
+  <!-- Object (let) -->
+  <div class="card">
+    <h2>Object (created with <code>let</code>)</h2>
+    <button onclick="object_Function()">Show Object Description</button>
+    <div id="Car_Object" class="out"></div>
+  </div>
+
+  <!-- EXTRA: break & continue -->
+  <div class="card">
+    <h2>Break & Continue (extra)</h2>
+    <button onclick="break_and_continue()">Run break/continue demo</button>
+    <div id="Break_Continue" class="out"></div>
+  </div>
+
+  <!-- EXTRA: string length -->
+  <div class="card">
+    <h2>String Length (extra)</h2>
+    <button onclick="show_length()">Show length</button>
+    <div id="Length_Demo" class="out"></div>
+  </div>
+
+  <!-- EXTRA: return statement -->
+  <div class="card">
+    <h2>Return Statement (extra)</h2>
+    <button onclick="show_total()">Calculate total</button>
+    <div id="Return_Demo" class="out"></div>
+  </div>
+</body>
+</html>
+
