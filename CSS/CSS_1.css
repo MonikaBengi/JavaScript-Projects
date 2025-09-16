@@ -1,0 +1,55 @@
+/* Contact Form Styling */
+body {
+  font-family: Arial, sans-serif;
+  background: #fce4ec; /* light pink background */
+  padding: 30px;
+}
+
+h2 {
+  text-align: center;
+  color: #ad1457; /* deep pink */
+}
+
+form {
+  max-width: 400px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input[type="text"], textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 100px;
+}
+
+input[type="submit"] {
+  margin-top: 15px;
+  width: 100%;
+  background: #ec407a; /* vivid pink */
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type="submit"]:hover {
+  background: #ad1457; /* deep pink on hover */
+}
