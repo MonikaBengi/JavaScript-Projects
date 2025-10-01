@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>onreadystatechange Challenge</title>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; padding: 24px; }
+    #status { padding: 12px; border: 1px solid #ddd; border-radius: 8px; min-height: 48px; margin-bottom: 12px; white-space: pre-line; }
+    #content { padding: 12px; border: 1px solid #ddd; border-radius: 8px; min-height: 60px; margin-top: 12px; }
+    button { padding: 10px 16px; border-radius: 8px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h2>OnReadyStateChange Challenge</h2>
+
+  <div id="status">Click the button to start the XHR...</div>
+  <button id="btn" onclick="loadContent()">Load content.html</button>
+  <div id="content"></div>
+
+  <script>
+    // Map readyState numbers to human-readable labels
+    const READY_STATES = {
+      0: 'UNSENT (xhr created)',
+      1: 'OPENED (xhr.open called)',
+      2: 'HEADERS_RECEIVED',
+      3: 'LOADING (downloading)',
+      4: 'DONE (request finished)'
+    };
+
+    function logStatus(msg) {
+      const box = document.getElementById('status');
+      box.textContent += (box.textContent ? '\n' : '') + msg;
+      console.log(msg);
+    }
+
+    function loadContent() {
+      // 1) Create the XHR object
+      const xhr = new XMLHttpRequest();
+
+      // 2) Attach onreadystatechange BEFORE open/send (so we see all states)
+      xhr.onreadystatechange = function () {
+        // Log each state transition
+        logStatus(`readyState = ${xhr.readyState} → ${READY_STATES[xhr.readyState] || 'Unknown'}`);
+
+        // Act only when DONE
+        if (xhr.readyState === 4) {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            // Success: put HTML into the page
+            document.getElementById('content').innerHTML = xhr.responseText;
+            document.getElementById('btn').disabled = true;
+            logStatus(`Status = ${xhr.status} OK ✅`);
+          } else {
+            // Error path
+            document.getElementById('content').textContent = `Error: ${xhr.status} ${xhr.statusText}`;
+            logStatus(`Status = ${xhr.status} ${xhr.statusText} ❌`);
+          }
+        }
+      };
+
+      // (Optional) Basic network error handler
+      xhr.onerror = function () {
+        logStatus('Network error occurred ❌');
+      };
+
+      // 3) Prepare the request
+      xhr.open('GET', 'content.html', true);
+
+      // 4) Send
+      logStatus('Sending request...');
+      xhr.send();
+
+      // Clear previous output, if any
+      document.getElementById('status').textContent = 'Starting XHR...';
+      document.getElementById('content').textContent = '';
+    }
+  </script>
+</body>
+</html>
