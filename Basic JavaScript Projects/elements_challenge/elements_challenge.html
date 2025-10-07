@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elements Challenge</title>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; padding: 24px; }
+    #items { margin-top: 12px; padding-left: 20px; }
+    button { padding: 8px 14px; border-radius: 8px; cursor: pointer; }
+    .note { color: #555; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <h1>Elements Challenge</h1>
+
+  <p id="status" class="note">Click the button to add a new list item.</p>
+  <ul id="items"></ul>
+
+  <button id="addBtn">Add item</button>
+
+  <script>
+    // ---- Using HTML DOM Document Objects ----
+    // 1) document.title (property)
+    document.title = "Elements Challenge – DOM demo";
+
+    // 2) document.getElementById (method)
+    const statusEl = document.getElementById("status");
+    const listEl   = document.getElementById("items");
+    const btn      = document.getElementById("addBtn");
+
+    // 3) document.createElement (method) + element.textContent (property)
+    let count = 0;
+    btn.addEventListener("click", () => {
+      count++;
+      const li = document.createElement("li");
+      li.textContent = `Dynamically added item #${count}`;
+      listEl.appendChild(li);
+
+      // 4) document.querySelector (method)
+      const last = document.querySelector("#items li:last-child");
+      statusEl.textContent = `Last item text: "${last.textContent}" (total: ${count})`;
+    });
+  </script>
+</body>
+</html>
