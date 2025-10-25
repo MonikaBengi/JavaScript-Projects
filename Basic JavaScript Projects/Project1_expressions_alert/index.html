@@ -3,16 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Event Challenge</title>
-    <script src="JS/main.js" defer></script> <!-- A JS fájl helyesen csatolva -->
+    <script src="JS/main.js" defer></script> <!-- JS file linked correctly -->
+
+    <style>
+        /* Page starts hidden */
+        body {
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        /* When ready, show the page */
+        body.fade-in {
+            opacity: 1;
+        }
+    </style>
+
+    <script>
+        // When the page is ready, fade it in
+        document.addEventListener("DOMContentLoaded", function () {
+            document.body.classList.add("fade-in");
+        });
+    </script>
 </head>
 <body>
 
     <h1>Event Challenge: onchange</h1>
 
-    <!-- ✏️ Ez az input mező váltja ki az eseményt -->
+    <!-- This input triggers the change event -->
     <input type="text" onchange="myFunction()" placeholder="Írj be valamit!">
 
-    <!-- 💬 Ide írjuk ki a változást -->
+    <!-- We will show the result here -->
     <p id="demo"></p>
 
 </body>

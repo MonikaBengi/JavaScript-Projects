@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animation Challenge</title>
+  <style>
+    /* Page setup */
+    body {
+      background-color: #f0f9ff; /* light sky blue background */
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    h2 {
+      color: #2563eb; /* calm blue title */
+    }
+
+    /* Animated box */
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: #f9a8d4; /* soft pink */
+      margin: 50px auto;
+      border-radius: 20px;
+      animation: moveBox 4s infinite alternate ease-in-out;
+    }
+
+    /* Animation keyframes */
+    @keyframes moveBox {
+      0% {
+        transform: translateY(0);
+        background-color: #f9a8d4; /* pink */
+      }
+      50% {
+        transform: translateY(-100px);
+        background-color: #3b82f6; /* blue */
+      }
+      100% {
+        transform: translateY(0);
+        background-color: #60a5fa; /* light blue */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Animation Challenge</h2>
+  <div class="box"></div>
+
+</body>
+</html>

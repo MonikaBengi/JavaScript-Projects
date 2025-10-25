@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Monika’s JSON.stringify() Example</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <h1>JSON.stringify() Example</h1>
+
+  <p id="myPet"></p>
+
+  <script>
+    // Create a small JavaScript object
+    const pet = {
+      name: "Bubu",
+      type: "Dog",
+      color: "Brown and Black"
+    };
+
+    // Convert it to a JSON string
+    const jsonString = JSON.stringify(pet);
+
+    // Show the JSON result on the page
+    document.getElementById("myPet").innerHTML = jsonString;
+  </script>
+
+</body>
+</html>

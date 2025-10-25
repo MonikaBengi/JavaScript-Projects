@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sticky Contact Button</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f9ff;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    h1 {
+      color: #2563eb;
+    }
+
+    /* Sticky button style */
+    .contact-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #2563eb; /* blue button */
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s;
+      z-index: 10;
+    }
+
+    .contact-btn:hover {
+      background-color: #fb6f92; /* soft pink hover */
+    }
+
+    /* Popup form box */
+    .popup-form {
+      display: none;
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      background-color: #fff;
+      border: 2px solid #2563eb;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      width: 250px;
+      text-align: left;
+      z-index: 9;
+    }
+
+    .popup-form input, 
+    .popup-form textarea {
+      width: 100%;
+      padding: 8px;
+      margin: 6px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .popup-form button {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      padding: 8px 10px;
+      border-radius: 6px;
+      width: 100%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .popup-form button:hover {
+      background-color: #fb6f92;
+    }
+
+    .close-btn {
+      background-color: #ccc;
+      margin-top: 5px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Sticky Contact Button Challenge 💬</h1>
+
+  <!-- Sticky button -->
+  <button class="contact-btn" onclick="toggleForm()">Contact Us</button>
+
+  <!-- Popup contact form -->
+  <div class="popup-form" id="popupForm">
+    <h3>Contact Form</h3>
+    <label>Name:</label>
+    <input type="text" id="name" placeholder="Your name">
+
+    <label>Message:</label>
+    <textarea id="message" rows="3" placeholder="Write here..."></textarea>
+
+    <button onclick="sendMessage()">Send</button>
+    <button class="close-btn" onclick="toggleForm()">Close</button>
+  </div>
+
+  <script>
+    // Show or hide popup form
+    function toggleForm() {
+      const form = document.getElementById("popupForm");
+      if (form.style.display === "block") {
+        form.style.display = "none";
+      } else {
+        form.style.display = "block";
+      }
+    }
+
+    // Simple send message alert
+    function sendMessage() {
+      const name = document.getElementById("name").value;
+      const message = document.getElementById("message").value;
+
+      if (name === "" || message === "") {
+        alert("Please fill in all fields before sending.");
+      } else {
+        alert("Thank you, " + name + "! Your message has been sent.");
+        toggleForm();
+      }
+    }
+  </script>
+
+</body>
+</html>

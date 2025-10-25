@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Monika’s Double Click Challenge</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff7fa;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    p {
+      font-size: 24px;
+      color: #444;
+      background-color: #ffe4ec;
+      border: 2px solid #f8b7cc;
+      border-radius: 8px;
+      display: inline-block;
+      padding: 20px 40px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    p:hover {
+      background-color: #ffd6e5;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- paragraph with double-click event -->
+  <p id="magicText" ondblclick="changeColor()">
+    Double click this text, and see the magic!
+  </p>
+
+  <script>
+    // This function changes the text color when user double clicks
+    function changeColor() {
+      const text = document.getElementById("magicText");
+      text.style.color = "deeppink";   // make it pretty pink
+      text.innerHTML = "You double clicked me, Monika!"; // change the text too
+    }
+  </script>
+
+</body>
+</html>

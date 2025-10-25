@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Monika’s localStorage() Example</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <h1>localStorage() Example</h1>
+
+  <p id="myNote"></p>
+
+  <script>
+    // Save data locally in the browser
+    localStorage.setItem("Note", "Remember to smile today 💖");
+
+    // Get the data back using the key
+    const message = localStorage.getItem("Note");
+
+    // Display it on the page
+    document.getElementById("myNote").innerHTML = message;
+  </script>
+
+</body>
+</html>

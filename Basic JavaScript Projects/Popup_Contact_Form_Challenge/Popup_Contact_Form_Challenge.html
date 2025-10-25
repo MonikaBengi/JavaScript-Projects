@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Popup Contact Form</title>
+  <style>
+    /* Button style */
+    .open-button {
+      background-color: #3b82f6; /* soft blue */
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      border-radius: 8px;
+    }
+
+    /* Popup background */
+    .form-popup {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      border: 2px solid #dbeafe;
+      z-index: 9;
+      background-color: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+    }
+
+    /* Input fields */
+    input[type=text], input[type=email] {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      border: 1px solid #cbd5e1;
+      border-radius: 5px;
+    }
+
+    /* Buttons inside popup */
+    .form-container button {
+      background-color: #3b82f6; /* blue */
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      width: 100%;
+      margin-top: 5px;
+      border-radius: 5px;
+    }
+
+    .form-container .cancel {
+      background-color: #f9a8d4; /* soft pink */
+      color: white;
+    }
+
+    .form-container button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Popup Contact Form</h2>
+  <button class="open-button" onclick="openForm()">Open Form</button>
+
+  <div class="form-popup" id="myForm">
+    <form class="form-container">
+      <h3>Contact Us</h3>
+
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Enter your name">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email">
+
+      <button type="button" onclick="submitForm()">Submit</button>
+      <button type="button" class="cancel" onclick="closeForm()">Close</button>
+    </form>
+  </div>
+
+  <script>
+    // Show popup
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+
+    // Hide popup
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+
+    // Simple submit alert
+    function submitForm() {
+      alert("Form submitted successfully!");
+      closeForm();
+    }
+  </script>
+
+</body>
+</html>

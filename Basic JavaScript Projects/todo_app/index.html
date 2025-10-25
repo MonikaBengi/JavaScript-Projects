@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Monika’s Simple To-Do App</title>
+  <link rel="stylesheet" href="css/todo.css" />
+</head>
+<body>
+  <h1>✨ My To-Do List ✨</h1>
+
+  <!-- input + add button -->
+  <input id="task" placeholder="Write a new task..." />
+  <button id="add">Add Item</button>
+
+  <hr />
+
+  <!-- list will render here -->
+  <div id="todos"></div>
+
+  <footer>
+    <p>Created by Monika 💙 | <span id="date"></span></p>
+  </footer>
+
+  <!-- app logic -->
+  <script src="js/todo.js"></script>
+  <script>
+    // tiny footer date
+    document.getElementById("date").textContent = new Date().toDateString();
+  </script>
+</body>
+</html>

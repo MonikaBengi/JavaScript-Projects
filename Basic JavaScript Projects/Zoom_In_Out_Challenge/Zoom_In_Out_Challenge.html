@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zoom In and Out Challenge</title>
+  <style>
+    /* Page setup */
+    body {
+      background-color: #f0f9ff; /* soft blue */
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    h2 {
+      color: #2563eb; /* calm blue title */
+    }
+
+    /* Image styling */
+    .zoom {
+      width: 250px;
+      height: 250px;
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 50px auto;
+    }
+
+    .zoom img {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      animation: zoomEffect 4s infinite ease-in-out;
+    }
+
+    /* Animation */
+    @keyframes zoomEffect {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Zoom In and Out Challenge</h2>
+  <div class="zoom">
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Beautiful Nature">
+  </div>
+
+</body>
+</html>

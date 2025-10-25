@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Monika’s JSON.parse() Example</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <h1>JSON.parse() Example</h1>
+
+  <p id="myPet"></p>
+
+  <script>
+    // This is a JSON string (like saved data)
+    const jsonString = '{"name": "Bubu", "type": "Dog", "color": "Brown and Black"}';
+
+    // Convert JSON string back into a JavaScript object
+    const petObject = JSON.parse(jsonString);
+
+    // Show result in a friendly text
+    document.getElementById("myPet").innerHTML =
+      petObject.name + " is a " + petObject.color + " " + petObject.type + ".";
+  </script>
+
+</body>
+</html>

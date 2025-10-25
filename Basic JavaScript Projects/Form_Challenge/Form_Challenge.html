@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Challenge</title>
+</head>
+<body>
+
+  <h2>Simple Form</h2>
+  <form id="myForm" onsubmit="return validateForm()">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br><br>
+
+    <label for="phone">Phone Number:</label><br>
+    <input type="tel" id="phone" name="phone"><br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <script>
+    // Simple form validation
+    function validateForm() {
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let phone = document.getElementById("phone").value;
+
+      if (name == "" || email == "" || phone == "") {
+        alert("Please fill out all fields before submitting!");
+        return false; // Stop form submission
+      } else {
+        alert("Form submitted successfully!");
+        return true;
+      }
+    }
+  </script>
+
+</body>
+</html>
